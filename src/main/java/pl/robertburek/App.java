@@ -17,10 +17,7 @@ public class App {
         System.out.println("Hello World!");
         new App(true, true, true);
 
-        ExampleModel exampleModel = new ExampleModel();
-        exampleModel.nazwisko = "Nowak";
-        exampleModel.setImie("Marian");
-        exampleModel.setMaWlosy(true);
+        ExampleModel exampleModel = new ExampleModel("Robert", "Nowak", 45, true);
         System.out.println(exampleModel);
 
         ExampleModel exampleModelDuplicate = new ExampleModel();

@@ -1,15 +1,14 @@
 package pl.robertburek;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * Created by Robert Burek
  */
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class ExampleModel {
 
     @Getter
@@ -27,6 +26,18 @@ public class ExampleModel {
     boolean maWlosy;
 
 //    Wygenerowane za pomocą Intellij
+//    public ExampleModel(String imie, String nazwisko, int wiek, boolean maWlosy) {
+//        this.imie = imie;
+//        this.nazwisko = nazwisko;
+//        this.wiek = wiek;
+//        this.maWlosy = maWlosy;
+//    }
+//
+//    public ExampleModel() {
+//    }
+
+
+    //    Wygenerowane za pomocą Intellij
 //    @Override
 //    public boolean equals(Object o) {
 //        if (this == o) return true;
