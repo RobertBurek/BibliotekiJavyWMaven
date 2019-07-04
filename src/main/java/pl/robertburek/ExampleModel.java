@@ -2,10 +2,12 @@ package pl.robertburek;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Created by Robert Burek
  */
+@ToString
 public class ExampleModel {
 
     @Getter

@@ -19,6 +19,10 @@ public class App {
 
         ExampleModel exampleModel = new ExampleModel();
         exampleModel.nazwisko = "Nowak";
+        exampleModel.setImie("Marian");
+        exampleModel.setMaWlosy(true);
+
+        System.out.println(exampleModel);
 
     }
 }
