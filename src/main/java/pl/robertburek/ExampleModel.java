@@ -14,5 +14,4 @@ public class ExampleModel {
     private String nazwisko;
     int wiek;
     boolean maWlosy;
-
 }

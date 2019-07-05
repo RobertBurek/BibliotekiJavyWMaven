@@ -1,11 +1,13 @@
 package pl.robertburek;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.java.Log;
 
 
 /**
  * Hello world!
  */
+@Log
 @AllArgsConstructor
 public class App {
     Boolean a;
@@ -41,10 +43,14 @@ public class App {
         System.out.println("");
         System.out.println("exampleModelDuplicate  vs  exampleModelBuilder");
         System.out.println(exampleModelDuplicate.equals(exampleModelBuilder));
+        if (exampleModelDuplicate.equals(exampleModelBuilder))
+            log.info("Obiekty są takie same!");
 
         System.out.println("");
         System.out.println("exampleModel  vs  exampleModelDuplicate");
         System.out.println(exampleModel.equals(exampleModelDuplicate));
+        if (!exampleModel.equals(exampleModelDuplicate))
+            log.info("Obiekty nie są takie same!");
 
     }
 }
