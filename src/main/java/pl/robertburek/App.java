@@ -18,6 +18,7 @@ public class App {
         new App(true, true, true);
 
         ExampleModel exampleModel = new ExampleModel("Robert", "Nowak", 45, true);
+        System.out.print("exampleModel: ");
         System.out.println(exampleModel);
 
         ExampleModel exampleModelDuplicate = new ExampleModel();
@@ -25,8 +26,24 @@ public class App {
         exampleModelDuplicate.setImie("Marianek");
         exampleModelDuplicate.setMaWlosy(false);
         exampleModelDuplicate.setWiek(25);
+        System.out.print("exampleModelDuplicate: ");
         System.out.println(exampleModelDuplicate);
 
+        ExampleModel exampleModelBuilder = ExampleModel.builder()
+                .imie("Zosia")
+                .maWlosy(false)
+                .nazwisko("Nowak")
+                .wiek(38)
+                .build();
+        System.out.print("exampleModelBuilder: ");
+        System.out.println(exampleModelBuilder);
+
+        System.out.println("");
+        System.out.println("exampleModelDuplicate  vs  exampleModelBuilder");
+        System.out.println(exampleModelDuplicate.equals(exampleModelBuilder));
+
+        System.out.println("");
+        System.out.println("exampleModel  vs  exampleModelDuplicate");
         System.out.println(exampleModel.equals(exampleModelDuplicate));
 
     }

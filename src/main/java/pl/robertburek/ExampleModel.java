@@ -5,6 +5,8 @@ import lombok.*;
 /**
  * Created by Robert Burek
  */
+
+@Builder
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
@@ -23,6 +25,7 @@ public class ExampleModel {
     int wiek;
     @Getter
     @Setter
+    @EqualsAndHashCode.Include
     boolean maWlosy;
 
 //    Wygenerowane za pomocą Intellij
