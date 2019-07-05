@@ -1,7 +1,10 @@
 package pl.robertburek;
 
 import lombok.extern.java.Log;
+import org.simpleframework.xml.Serializer;
+import org.simpleframework.xml.core.Persister;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,7 +15,7 @@ import java.util.List;
 @Log
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         List<Ubranie> ubraniaLista = Arrays.asList(
                 new Ubranie("Blue", true)
@@ -24,14 +27,13 @@ public class App {
         System.out.print("exampleModel: ");
         System.out.println(exampleModel);
 
-        ExampleModel exampleModelDuplicate = ExampleModel.builder()
-                .imie("Marianek")
-                .maWlosy(false)
-                .nazwisko("Nowak")
-                .wiek(50)
-                .build();
+        ExampleModel exampleModelDuplicate = new ExampleModel();
+                exampleModelDuplicate.setImie("Marianek");
+                exampleModelDuplicate.setMaWlosy(false);
+                exampleModelDuplicate.setNazwisko("Nowak");
+                exampleModelDuplicate.setWiek(50);
         System.out.print("exampleModelDuplicate: ");
-        log.info(exampleModelDuplicate.toString());
+        System.out.println(exampleModelDuplicate);
 
         System.out.println("Sprawdzamy równość obiektów na podstawie equals z Lomboka");
         System.out.print("exampleModel  vs  exampleModelDuplicate: ");
@@ -41,6 +43,15 @@ public class App {
 
         System.out.println("----------------Simple XML--------------");
         List<ExampleModel> exampleModelList = Arrays.asList(exampleModel, exampleModelDuplicate);
+
+        Serializer serializer = new Persister();
+        File result = new File("example.xml");
+        serializer.write(exampleModel, result);
+
+        ExampleModel readExampleModel = serializer.read(ExampleModel.class, result);
+        log.info(readExampleModel.toString());
+        log.info(exampleModel.toString());
+        log.info(String.valueOf(exampleModel.equals(readExampleModel)));
 
     }
 }
