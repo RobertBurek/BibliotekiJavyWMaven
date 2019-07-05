@@ -4,8 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.util.List;
-
 /**
  * Created by Robert Burek
  */
@@ -19,5 +17,6 @@ public class ExampleModel {
     private int wiek;
     @EqualsAndHashCode.Exclude
     private boolean maWlosy;
-    private List<Ubranie> ubrania;
+//    private Ubranie ubranie;
+//    private List<Ubranie> ubrania;
 }
