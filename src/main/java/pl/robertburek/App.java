@@ -30,6 +30,19 @@ public class App {
         if (exampleModelDuplicate.equals(exampleModelDuplicate))
             log.info("Obiekty są takie same!");
 
+        System.out.println("-----------------------Gson------------------------");
+        String json = new Gson().toJson(exampleModel);
+        // Załóżmy, że string json przyszedł z internetu lub z pliku
+        ExampleModel fromJsonExampleModel = new Gson().fromJson(json,ExampleModel.class);
+
+        System.out.print("fromJsonExampleModel: ");
+        System.out.println(fromJsonExampleModel);
+        System.out.println("");
+        System.out.print("exampleModel  vs  fromJsonExampleModel : ");
+        System.out.println(exampleModel.equals(fromJsonExampleModel));
+        if (exampleModel.equals(fromJsonExampleModel))
+            log.info("Obiekty są takie same!");
+
         new Gson();
     }
 }
