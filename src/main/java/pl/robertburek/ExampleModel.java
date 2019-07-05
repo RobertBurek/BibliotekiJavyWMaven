@@ -14,7 +14,8 @@ public class ExampleModel {
     private String imie;
     private String nazwisko;
     @EqualsAndHashCode.Exclude
-    int wiek;
+    private int wiek;
     @EqualsAndHashCode.Exclude
-    boolean maWlosy;
+    private boolean maWlosy;
+    private Ubranie ubranie;
 }
