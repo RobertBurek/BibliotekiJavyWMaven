@@ -11,18 +11,24 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 public class ExampleModel {
-    @Getter @Setter
+    @Getter
+    @Setter
     private String imie;
-    @Getter @Setter
+    @Getter
+    @Setter
     private String nazwisko;
-    @Getter @Setter
+    @Getter
+    @Setter
     @EqualsAndHashCode.Exclude
     private int wiek;
-    @Getter @Setter
+    @Getter
+    @Setter
     @EqualsAndHashCode.Exclude
     private boolean maWlosy;
-//    @Getter @Setter
-//    private Ubranie ubranie;
+    @EqualsAndHashCode.Exclude
+    @Getter
+    @Setter
+    private Ubranie ubranie;
 //    @Getter @Setter
 //    private List<Ubranie> ubrania;
 }

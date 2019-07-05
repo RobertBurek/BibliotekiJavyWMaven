@@ -1,0 +1,10 @@
+<exampleModel>
+    <imie>Marianek</imie>
+    <nazwisko>Nowak</nazwisko>
+    <wiek>45</wiek>
+    <maWlosy>true</maWlosy>
+    <ubranie>
+        <kolor>Red</kolor>
+        <maSpodnie>true</maSpodnie>
+    </ubranie>
+</exampleModel>

@@ -1,14 +1,16 @@
 package pl.robertburek;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * Created by Robert Burek
  */
 
 @AllArgsConstructor
-@Data
+@NoArgsConstructor
+@ToString
 public class Ubranie {
     private String kolor;
     private boolean maSpodnie;

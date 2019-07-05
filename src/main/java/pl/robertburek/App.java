@@ -23,15 +23,17 @@ public class App {
         ExampleModel exampleModel = new ExampleModel("Marianek"
                 , "Nowak"
                 , 45
-                , true);
+                , true
+                , new Ubranie("Red", true));
         System.out.print("exampleModel: ");
         System.out.println(exampleModel);
 
         ExampleModel exampleModelDuplicate = new ExampleModel();
-                exampleModelDuplicate.setImie("Marianek");
-                exampleModelDuplicate.setMaWlosy(false);
-                exampleModelDuplicate.setNazwisko("Nowak");
-                exampleModelDuplicate.setWiek(50);
+        exampleModelDuplicate.setImie("Marianek");
+        exampleModelDuplicate.setMaWlosy(false);
+        exampleModelDuplicate.setNazwisko("Nowak");
+        exampleModelDuplicate.setWiek(50);
+        exampleModelDuplicate.setUbranie(new Ubranie("Blue", false));
         System.out.print("exampleModelDuplicate: ");
         System.out.println(exampleModelDuplicate);
 
