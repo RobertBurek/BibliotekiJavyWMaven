@@ -1,59 +1,18 @@
 package pl.robertburek;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * Created by Robert Burek
  */
 
 @Builder
-@ToString
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class ExampleModel {
-
-    @Getter
-    @Setter
     private String imie;
-    @Getter
-    @Setter
-    @EqualsAndHashCode.Include
-    String nazwisko;
-    @Getter
-    @Setter
+    private String nazwisko;
     int wiek;
-    @Getter
-    @Setter
-    @EqualsAndHashCode.Include
     boolean maWlosy;
 
-//    Wygenerowane za pomocą Intellij
-//    public ExampleModel(String imie, String nazwisko, int wiek, boolean maWlosy) {
-//        this.imie = imie;
-//        this.nazwisko = nazwisko;
-//        this.wiek = wiek;
-//        this.maWlosy = maWlosy;
-//    }
-//
-//    public ExampleModel() {
-//    }
-
-
-    //    Wygenerowane za pomocą Intellij
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        ExampleModel that = (ExampleModel) o;
-//        return wiek == that.wiek &&
-//                maWlosy == that.maWlosy &&
-//                Objects.equals(imie, that.imie) &&
-//                Objects.equals(nazwisko, that.nazwisko);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(imie, nazwisko, wiek, maWlosy);
-//    }
 }

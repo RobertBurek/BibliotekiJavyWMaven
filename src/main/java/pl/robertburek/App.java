@@ -21,8 +21,8 @@ public class App {
         System.out.print("exampleModel: ");
         System.out.println(exampleModel);
 
-        ExampleModel exampleModelDuplicate = new ExampleModel();
-        exampleModelDuplicate.nazwisko = "Nowak";
+        ExampleModel exampleModelDuplicate = new ExampleModel("","",0,true);
+        exampleModelDuplicate.setNazwisko("Nowak");
         exampleModelDuplicate.setImie("Marianek");
         exampleModelDuplicate.setMaWlosy(false);
         exampleModelDuplicate.setWiek(25);
@@ -30,10 +30,10 @@ public class App {
         System.out.println(exampleModelDuplicate);
 
         ExampleModel exampleModelBuilder = ExampleModel.builder()
-                .imie("Zosia")
+                .imie("Marianek")
                 .maWlosy(false)
                 .nazwisko("Nowak")
-                .wiek(38)
+                .wiek(25)
                 .build();
         System.out.print("exampleModelBuilder: ");
         System.out.println(exampleModelBuilder);
