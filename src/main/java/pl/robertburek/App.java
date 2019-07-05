@@ -1,5 +1,6 @@
 package pl.robertburek;
 
+import com.google.gson.Gson;
 import lombok.extern.java.Log;
 
 /**
@@ -29,5 +30,6 @@ public class App {
         if (exampleModelDuplicate.equals(exampleModelDuplicate))
             log.info("Obiekty są takie same!");
 
+        new Gson();
     }
 }
