@@ -5,6 +5,7 @@ import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,14 +18,19 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        List<Ubranie> ubraniaLista = Arrays.asList(
-                new Ubranie("Blue", true)
-                , new Ubranie("Red", false));
+        List<Ubranie> ubraniaLista = new ArrayList<>();
+        ubraniaLista.add(new Ubranie("Blue", true));
+        ubraniaLista.add(new Ubranie("Red", false));
+
+//          Nie może być Arrays.asList brak kostruktora bezargumentowego
+//                Arrays.asList(
+//                new Ubranie("Blue", true)
+//                , new Ubranie("Red", false));
         ExampleModel exampleModel = new ExampleModel("Marianek"
                 , "Nowak"
                 , 45
                 , true
-                , new Ubranie("Red", true));
+                , new ArrayList<Ubranie>(ubraniaLista));
         System.out.print("exampleModel: ");
         System.out.println(exampleModel);
 
@@ -33,7 +39,7 @@ public class App {
         exampleModelDuplicate.setMaWlosy(false);
         exampleModelDuplicate.setNazwisko("Nowak");
         exampleModelDuplicate.setWiek(50);
-        exampleModelDuplicate.setUbranie(new Ubranie("Blue", false));
+        exampleModelDuplicate.setUbrania(ubraniaLista);
         System.out.print("exampleModelDuplicate: ");
         System.out.println(exampleModelDuplicate);
 

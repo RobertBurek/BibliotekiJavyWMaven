@@ -3,8 +3,14 @@
     <nazwisko>Nowak</nazwisko>
     <wiek>45</wiek>
     <maWlosy>true</maWlosy>
-    <ubranie>
-        <kolor>Red</kolor>
-        <maSpodnie>true</maSpodnie>
-    </ubranie>
+    <ubrania class="java.util.ArrayList">
+        <ubranie>
+            <kolor>Blue</kolor>
+            <maSpodnie>true</maSpodnie>
+        </ubranie>
+        <ubranie>
+            <kolor>Red</kolor>
+            <maSpodnie>false</maSpodnie>
+        </ubranie>
+    </ubrania>
 </exampleModel>

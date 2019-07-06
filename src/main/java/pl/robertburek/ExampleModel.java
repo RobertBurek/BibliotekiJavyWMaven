@@ -2,6 +2,8 @@ package pl.robertburek;
 
 import lombok.*;
 
+import java.util.List;
+
 /**
  * Created by Robert Burek
  */
@@ -25,10 +27,12 @@ public class ExampleModel {
     @Setter
     @EqualsAndHashCode.Exclude
     private boolean maWlosy;
+    //    @EqualsAndHashCode.Exclude
+//    @Getter
+//    @Setter
+//    private Ubranie ubranie;
     @EqualsAndHashCode.Exclude
     @Getter
     @Setter
-    private Ubranie ubranie;
-//    @Getter @Setter
-//    private List<Ubranie> ubrania;
+    private List<Ubranie> ubrania;
 }
