@@ -1,7 +1,10 @@
 package pl.robertburek;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import lombok.extern.java.Log;
-import okhttp3.*;
+import pl.robertburek.injection.ListFiller;
+import pl.robertburek.injection.RepositoryModule;
 
 
 /**
@@ -12,29 +15,14 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
+        Injector injector = Guice.createInjector(new RepositoryModule());
 
-        //  Wysyłanie danych na serwer
-        System.out.println("--------------------Wysyłanie na serwer----------------------");
+        //1.
+        injector.getInstance(ListFiller.class).getUsers();
 
-        OkHttpClient clientOut = new OkHttpClient();
-
-        RequestBody body = new FormBody.Builder()
-                .add("id", "1")
-                .add("title", "foo")
-                .add("body", "bar")
-                .add("userId", "1")
-                .build();
-
-        Request requestOut = new Request.Builder()
-                .url("https://jsonplaceholder.typicode.com/posts/1")
-                .headers(new Headers.Builder().add("Content-type", "application/json; charset=UTF-8").build())
-                .method("PUT", body)
-                .build();
-
-
-        Response responseOut = clientOut.newCall(requestOut).execute();
-        log.info(responseOut.body().string());
-
-        log.info("koniec bloku");
+        //2.
+        ListFiller listFiller = new ListFiller();
+        injector.injectMembers(listFiller);
+        listFiller.getUsers();
     }
 }
