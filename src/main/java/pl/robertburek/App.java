@@ -4,7 +4,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import lombok.extern.java.Log;
 import pl.robertburek.injection.ListFiller;
-import pl.robertburek.injection.RepositoryModule;
+import pl.robertburek.injection.injectmodule.RepositoryModule;
 
 
 /**
