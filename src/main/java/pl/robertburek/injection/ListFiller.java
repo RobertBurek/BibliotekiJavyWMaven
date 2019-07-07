@@ -1,5 +1,6 @@
 package pl.robertburek.injection;
 
+import com.google.inject.Inject;
 
 /**
  * Created by Robert Burek
